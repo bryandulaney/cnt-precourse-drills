@@ -11,6 +11,7 @@ public class Business implements Addressable {
 
 	Address address = new Address("street","city","state","zip");
 	
+	
 	public Business(String name){
 		this.name = name;
 	}
@@ -22,8 +23,8 @@ public class Business implements Addressable {
 	
 	@Override
 	public List<Address> getAddresses() {
-		for(Address address: addresses) {
-		addresses.add(address);
+		for (int i = 0; i < addresses.size(); i++) {
+			((Addressable) addresses).addAddress(address);
 		}
 		return addresses;
 	}
